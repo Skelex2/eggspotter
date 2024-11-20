@@ -1,4 +1,5 @@
 document.getElementById('image-upload').addEventListener('change', function() {
+document.getElementById('image-upload').addEventListener('change', function() {
     const file = this.files[0];
     if (file) {
         const reader = new FileReader();
@@ -21,12 +22,12 @@ document.getElementById('image-upload').addEventListener('change', function() {
 });
 
 let eggCounter = 0;
-const maxEggs = 5000;
+const maxEggs = 20;
 let eggPositions = []; // Store the positions of eggs
 
 function placeEgg() {
     if (eggCounter >= maxEggs) {
-        alert('Get a life');
+        alert('You have reached the maximum number of eggs.');
         return;
     }
     const canvas = document.getElementById('image-canvas');
@@ -118,4 +119,10 @@ function getEggType() {
 function downloadImage() {
     const canvas = document.getElementById('image-canvas');
     canvas.toBlob(function(blob) {
-        const link = document.createElement('a
+        const link = document.createElement('a');
+        link.download = 'image_with_egg.png';
+        link.href = URL.createObjectURL(blob);
+        link.click();
+        URL.revokeObjectURL(link.href);
+    }, 'image/png');
+}
