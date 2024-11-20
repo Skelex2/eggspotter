@@ -12,7 +12,6 @@ document.getElementById('image-upload').addEventListener('change', function() {
                 ctx.drawImage(img, 0, 0);
                 document.getElementById('canvas-section').classList.remove('hidden');
                 eggCounter = 0; // Reset egg counter on new image upload
-                eggPositions = []; // Reset positions
             };
             img.src = event.target.result;
         };
@@ -21,12 +20,11 @@ document.getElementById('image-upload').addEventListener('change', function() {
 });
 
 let eggCounter = 0;
-const maxEggs = 5000;
-let eggPositions = []; // Store the positions of eggs
+const maxEggs = 20;
 
 function placeEgg() {
     if (eggCounter >= maxEggs) {
-        alert('Get a life');
+        alert('You have reached the maximum number of eggs.');
         return;
     }
     const canvas = document.getElementById('image-canvas');
@@ -63,24 +61,8 @@ function placeEgg() {
     }
 
     eggImg.onload = function() {
-        let x, y, overlapping, maxAttempts = 100, attempts = 0;
-
-        do {
-            x = 150 + Math.random() * (canvas.width - eggWidth - 300); // Avoid ad banners
-            y = Math.random() * (canvas.height - eggHeight);
-            overlapping = eggPositions.some(pos => 
-                x < pos.x + pos.width && x + eggWidth > pos.x &&
-                y < pos.y + pos.height && y + eggHeight > pos.y
-            );
-            attempts++;
-        } while (overlapping && attempts < maxAttempts);
-
-        if (attempts >= maxAttempts) {
-            // Allow overlapping if all attempts fail
-            x = 150 + Math.random() * (canvas.width - eggWidth - 300);
-            y = Math.random() * (canvas.height - eggHeight);
-        }
-
+        const x = 150 + Math.random() * (canvas.width - eggWidth - 300); // Avoid ad banners
+        const y = Math.random() * (canvas.height - eggHeight);
         const rotation = Math.random() * 360 * (Math.PI / 180); // Random rotation in radians
 
         ctx.save();
@@ -88,30 +70,26 @@ function placeEgg() {
         ctx.rotate(rotation);
         ctx.drawImage(eggImg, -eggWidth / 2, -eggHeight / 2, eggWidth, eggHeight);
         ctx.restore();
-        
-        // Store the egg's position
-        eggPositions.push({ x, y, width: eggWidth, height: eggHeight });
-
         eggCounter++;
     };
 }
 
 function getEggType() {
-    const randomNum = Math.random() * 1000000; // Using a range of 0 to 999999 for precision
+    const randomNum = Math.random() * 1000000;
     if (randomNum < 1) {
-        return 'pixel'; // 0.0001%
+        return 'pixel';
     } else if (randomNum < 100) {
-        return 'universe'; // 0.0099%
+        return 'universe';
     } else if (randomNum < 1100) {
-        return 'golden'; // 0.1%
+        return 'golden';
     } else if (randomNum < 2100) {
-        return 'green'; // 0.1%
+        return 'green';
     } else if (randomNum < 4100) {
-        return 'boiled'; // 0.2%
-    } else if (randomNum < 51000) {
-        return 'cracked'; // 5%
+        return 'boiled';
+    } else if (randomNum < 21000) {
+        return 'cracked';
     } else {
-        return 'normal'; // Remaining 94.6899%
+        return 'normal';
     }
 }
 

@@ -48,6 +48,25 @@ button:hover {
     background-color: #388E3C; /* Darker green */
 }
 
+.ad-banner {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    background-color: #ddd;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.left-ad {
+    left: 0;
+}
+
+.right-ad {
+    right: 0;
+}
+
 footer {
     background-color: #4CAF50; /* Green */
     color: white;
