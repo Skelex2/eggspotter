@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EggSpotter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EggSpotter</h1>
+    </header>
+    <main>
+        <section id="upload-section">
+            <h2>Upload Your Image</h2>
+            <input type="file" id="image-upload" accept="image/*">
+            <button onclick="placeEgg()">Place Egg</button>
+        </section>
+        <section id="canvas-section" class="hidden">
+            <h2>Your Image with Egg</h2>
+            <canvas id="image-canvas"></canvas>
+            <button onclick="downloadImage()">Download Image</button>
+        </section>
+        <section id="egg-probabilities">
+            <h2>Egg Types and Chances</h2>
+            <ul>
+                <li>Normal Egg: 83.5899%</li>
+                <li>Cracked Egg: 20%</li>
+                <li>Boiled Egg: 2%</li>
+                <li>Green Egg: 1%</li>
+                <li>Golden Egg: 0.1%</li>
+                <li>Universe Egg: 0.001%</li>
+                <li>Pixel Egg: 0.0001%</li>
+            </ul>
+        </section>
+    </main>
+    <div class="ad-banner left-ad">
+        <p>Ad Banner 1</p>
+    </div>
+    <div class="ad-banner right-ad">
+        <p>Ad Banner 2</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 EggSpotter. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
