@@ -20,11 +20,11 @@ document.getElementById('image-upload').addEventListener('change', function() {
 });
 
 let eggCounter = 0;
-const maxEggs = 20;
+const maxEggs = 100;
 
 function placeEgg() {
     if (eggCounter >= maxEggs) {
-        alert('You have reached the maximum number of eggs.');
+        alert('You have reached the maximum number of eggs, refresh the page and try again.');
         return;
     }
     const canvas = document.getElementById('image-canvas');
