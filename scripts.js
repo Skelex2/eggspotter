@@ -1,7 +1,3 @@
-// AdSense Script
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4744102896947046" crossorigin="anonymous"></script>
-
-// Image Upload and Egg Placement Script
 document.getElementById('image-upload').addEventListener('change', function() {
     const file = this.files[0];
     if (file) {
@@ -122,10 +118,4 @@ function getEggType() {
 function downloadImage() {
     const canvas = document.getElementById('image-canvas');
     canvas.toBlob(function(blob) {
-        const link = document.createElement('a');
-        link.download = 'image_with_egg.png';
-        link.href = URL.createObjectURL(blob);
-        link.click();
-        URL.revokeObjectURL(link.href);
-    }, 'image/png');
-}
+        const link = document.createElement('a
