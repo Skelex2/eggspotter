@@ -1,3 +1,7 @@
+// AdSense Script
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4744102896947046" crossorigin="anonymous"></script>
+
+// Image Upload and Egg Placement Script
 document.getElementById('image-upload').addEventListener('change', function() {
     const file = this.files[0];
     if (file) {
