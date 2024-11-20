@@ -1,38 +1,50 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9; /* Light green background */
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
+button {
+    padding: 0.5em 1em;
+    margin-top: 1em;
     background-color: #4CAF50; /* Green */
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #388E3C; /* Darker green */
+}
+
+.ad-banner {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    background-color: #ddd;
+    text-align: center;
     padding: 1em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.left-ad {
+    left: 0;
+}
+
+.right-ad {
+    right: 0;
+}
+
+footer {
+    background-color: #4CAF50; /* Green */
+    color: white;
     text-align: center;
+    padding: 1em;
     width: 100%;
+    box-sizing: border-box;
 }
 
-main {
-    padding: 2em;
-    text-align: center;
-    flex: 1;
-    width: 70%;
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
-
-.hidden {
-    display: none;
-}
-
-canvas {
-    margin-top: 1em;
-    border: 2px solid #4CAF50; /* Green */
-    animation: pop-in 0.5s ease-in-out;
-}
-
-button {
-    padding: 0.5em 1[_{{{CITATION{{{_1{](https://github.com/EleanorEllingson/web-dev/tree/b2f2a382e77a20fd6895677c8b8f402ac4bae352/7-bank-project%2F1-template-route%2Ftranslations%2FREADME.ko.md)
